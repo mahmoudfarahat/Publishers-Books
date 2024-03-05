@@ -1,0 +1,15 @@
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\bin\Debug\net8.0\ReverseEngineeringBefore.deps.json
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\bin\Debug\net8.0\ReverseEngineeringBefore.dll
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\bin\Debug\net8.0\ReverseEngineeringBefore.pdb
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.AssemblyInfoInputs.cache
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.AssemblyInfo.cs
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.csproj.CoreCompileInputs.cache
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.sourcelink.json
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.dll
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\refint\ReverseEngineeringBefore.dll
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.pdb
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ref\ReverseEngineeringBefore.dll
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\bin\Debug\net8.0\ReverseEngineeringBefore.runtimeconfig.json
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.genruntimeconfig.cache
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\ReverseEngineeringBefore\obj\Debug\net8.0\ReverseEngineeringBefore.csproj.AssemblyReference.cache
