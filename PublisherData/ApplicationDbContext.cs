@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PublisherDomain;
 
 namespace PublisherData
 {
     public class ApplicationDbContext :DbContext
     {
+        private StreamWriter _streamWriter = new StreamWriter("EFCoreLog.txt",append:true);
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
 
@@ -13,7 +15,10 @@ namespace PublisherData
             //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(
                 "Data Source=(localdb)\\ProjectModels;Initial Catalog=PublisherApp;TrustServerCertificate=true;ApplicationIntent=ReadWrite;"
-                );
+                )
+                //.LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name} ,LogLevel.Information)
+                .LogTo(_streamWriter.WriteLine)
+                .EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,12 +32,28 @@ namespace PublisherData
                 new Author { Id = 4, FirstName = "Peter", LastName = "Magdy" },
                 new Author { Id = 5, FirstName = "Li", LastName = "Loe" }
             };
-            modelBuilder.Entity<Author>()
-                .HasMany<Book>()
-                .WithOne();
+
+            //modelBuilder.Entity<Author>()
+            //    .HasMany<Book>()
+            //    .WithOne()
+            //    .HasForeignKey(a => a.AuthorFK);
+
+            //modelBuilder.Entity<Author>()
+            //    .HasMany(a => a.Books)
+            //    .WithOne(b => b.Author)
+            //    .HasForeignKey(a => a.AuthorFK)
+            //    .HasForeignKey('AuthorFK')
+            //    .IsRequired(false);
+
 
             modelBuilder.Entity<Author>().HasData(authorList);
 
+        }
+
+        public override void Dispose()
+        {
+            _streamWriter.Dispose();
+            base.Dispose();
         }
     }
 }

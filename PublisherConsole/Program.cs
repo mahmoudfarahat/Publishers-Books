@@ -8,53 +8,54 @@ namespace PublisherConsole
     {
         static void Main(string[] args)
         {
+           ApplicationDbContext context = new ApplicationDbContext();
 
-            CoordinateRetrieveAndUpdateAuthor();
-            void CoordinateRetrieveAndUpdateAuthor()
-            {
-<<<<<<< HEAD
-                var author = FindThatAuthor(3);
-                if(author?.FirstName == "Mahmoud")
-                {
-                    author.FirstName = "Olw";
-                    SaveThatAuthor(author);
-                }
-=======
-                var author = new Author { FirstName = "O33li", LastName = "Pob" };
-                //author.Books.Add(new Book { Title ="dsadas",PublishDate =new DateOnly(2009,1,1) });
-                //author.Books.Add(new Book { Title = "wwww", PublishDate = new DateOnly(2009, 1, 1) });
+            context.Authors.ToList();
+            
 
-                using var context = new ApplicationDbContext(); 
-                 context.Authors.Add(author);   
-                context.SaveChanges();
-            }
-            void GetAuthors()
-            {
-                using var context = new ApplicationDbContext();
-                //var authors = context.Authors.Include(a => a.Books).ToList();
-                //foreach (var author in authors)
-                //{
-                //    Console.WriteLine(author.FirstName + " " + author.LastName);
-                //    foreach (var book in author.Books)
-                //    {
-                //        Console.WriteLine(book.Title);
-                //    }
-                //}
->>>>>>> 959505851451fb690ac2d52860bed39dc179642d
-            }
+            //CoordinateRetrieveAndUpdateAuthor();
+            //void CoordinateRetrieveAndUpdateAuthor()
+            //{
+            //     var author = FindThatAuthor(3);
+            //    if(author?.FirstName == "Mahmoud")
+            //    {
+            //        author.FirstName = "Olw";
+            //        SaveThatAuthor(author);
+            //    }
+            //     //var author = new Author { FirstName = "O33li", LastName = "Pob" };
+            //    //author.Books.Add(new Book { Title ="dsadas",PublishDate =new DateOnly(2009,1,1) });
+            //    //author.Books.Add(new Book { Title = "wwww", PublishDate = new DateOnly(2009, 1, 1) });
 
-            Author FindThatAuthor(int authorId)
-            {
-                using var shortLivedContext = new ApplicationDbContext();
-                return shortLivedContext.Authors.Find(authorId);
-            }
+            //    using var context = new ApplicationDbContext(); 
+            //     context.Authors.Add(author);   
+            //    context.SaveChanges();
+            //}
+            //void GetAuthors()
+            //{
+            //    using var context = new ApplicationDbContext();
+            //    //var authors = context.Authors.Include(a => a.Books).ToList();
+            //    //foreach (var author in authors)
+            //    //{
+            //    //    Console.WriteLine(author.FirstName + " " + author.LastName);
+            //    //    foreach (var book in author.Books)
+            //    //    {
+            //    //        Console.WriteLine(book.Title);
+            //    //    }
+            //    //}
+            // }
 
-            void SaveThatAuthor(Author author)
-            {
-                using var anotherShortLivedContext = new ApplicationDbContext();
-                anotherShortLivedContext.Authors.Update(author);
-                anotherShortLivedContext.SaveChanges();
-            }
+            //Author FindThatAuthor(int authorId)
+            //{
+            //    using var shortLivedContext = new ApplicationDbContext();
+            //    return shortLivedContext.Authors.Find(authorId);
+            //}
+
+            //void SaveThatAuthor(Author author)
+            //{
+            //    using var anotherShortLivedContext = new ApplicationDbContext();
+            //    anotherShortLivedContext.Authors.Update(author);
+            //    anotherShortLivedContext.SaveChanges();
+            //}
 
 
 
@@ -121,8 +122,8 @@ namespace PublisherConsole
             //    }
             //}
 
-            void GetAuthors()
-            {
+            //void GetAuthors()
+            //{
 
                 //var authors =_context.Authors.Where( a => EF.Functions.Like(a.LastName,"O%")).ToList();  // T SQL sytax
 
@@ -147,7 +148,7 @@ namespace PublisherConsole
                 //        Console.WriteLine(book.Title);
                 //    }
                 //}
-            }
+            //}
 
 
 

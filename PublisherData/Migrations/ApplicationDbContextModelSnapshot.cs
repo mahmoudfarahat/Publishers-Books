@@ -41,8 +41,6 @@ namespace PublisherData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-<<<<<<< HEAD
-=======
 
                     b.HasData(
                         new
@@ -75,7 +73,6 @@ namespace PublisherData.Migrations
                             FirstName = "Li",
                             LastName = "Loe"
                         });
->>>>>>> 959505851451fb690ac2d52860bed39dc179642d
                 });
 
             modelBuilder.Entity("PublisherDomain.Book", b =>
@@ -86,11 +83,7 @@ namespace PublisherData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
 
-<<<<<<< HEAD
                     b.Property<int>("AuthorId")
-=======
-                    b.Property<int?>("AuthorId")
->>>>>>> 959505851451fb690ac2d52860bed39dc179642d
                         .HasColumnType("int");
 
                     b.Property<decimal>("BasePrice")
@@ -112,7 +105,6 @@ namespace PublisherData.Migrations
 
             modelBuilder.Entity("PublisherDomain.Book", b =>
                 {
-<<<<<<< HEAD
                     b.HasOne("PublisherDomain.Author", "Author")
                         .WithMany("Books")
                         .HasForeignKey("AuthorId")
@@ -125,11 +117,6 @@ namespace PublisherData.Migrations
             modelBuilder.Entity("PublisherDomain.Author", b =>
                 {
                     b.Navigation("Books");
-=======
-                    b.HasOne("PublisherDomain.Author", null)
-                        .WithMany()
-                        .HasForeignKey("AuthorId");
->>>>>>> 959505851451fb690ac2d52860bed39dc179642d
                 });
 #pragma warning restore 612, 618
         }

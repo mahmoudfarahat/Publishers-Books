@@ -12,8 +12,8 @@ using PublisherData;
 namespace PublisherData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240305111756_initial2")]
-    partial class initial2
+    [Migration("20240305211854_changeFK")]
+    partial class changeFK
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,7 +86,7 @@ namespace PublisherData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
 
-                    b.Property<int?>("AuthorId")
+                    b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("BasePrice")
@@ -108,9 +108,18 @@ namespace PublisherData.Migrations
 
             modelBuilder.Entity("PublisherDomain.Book", b =>
                 {
-                    b.HasOne("PublisherDomain.Author", null)
-                        .WithMany()
-                        .HasForeignKey("AuthorId");
+                    b.HasOne("PublisherDomain.Author", "Author")
+                        .WithMany("Books")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("PublisherDomain.Author", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

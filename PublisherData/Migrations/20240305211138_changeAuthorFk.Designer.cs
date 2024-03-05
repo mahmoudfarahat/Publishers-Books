@@ -12,8 +12,8 @@ using PublisherData;
 namespace PublisherData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240304191440_init")]
-    partial class init
+    [Migration("20240305211138_changeAuthorFk")]
+    partial class changeAuthorFk
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,38 @@ namespace PublisherData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Mahmoud",
+                            LastName = "Farahat"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FirstName = "Ali",
+                            LastName = "Ahmed"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FirstName = "Omar",
+                            LastName = "Tamer"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FirstName = "Peter",
+                            LastName = "Magdy"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            FirstName = "Li",
+                            LastName = "Loe"
+                        });
                 });
 
             modelBuilder.Entity("PublisherDomain.Book", b =>
@@ -54,7 +86,7 @@ namespace PublisherData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int>("AuthorFK")
                         .HasColumnType("int");
 
                     b.Property<decimal>("BasePrice")
@@ -69,25 +101,18 @@ namespace PublisherData.Migrations
 
                     b.HasKey("BookId");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("AuthorFK");
 
                     b.ToTable("Books");
                 });
 
             modelBuilder.Entity("PublisherDomain.Book", b =>
                 {
-                    b.HasOne("PublisherDomain.Author", "Author")
-                        .WithMany("Books")
-                        .HasForeignKey("AuthorId")
+                    b.HasOne("PublisherDomain.Author", null)
+                        .WithMany()
+                        .HasForeignKey("AuthorFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Author");
-                });
-
-            modelBuilder.Entity("PublisherDomain.Author", b =>
-                {
-                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }
