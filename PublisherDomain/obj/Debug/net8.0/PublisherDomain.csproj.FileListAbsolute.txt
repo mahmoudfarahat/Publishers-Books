@@ -9,6 +9,7 @@ C:\Users\mahmoud.farahat\Desktop\PublisherApp\PublisherDomain\obj\Debug\net8.0\P
 C:\Users\mahmoud.farahat\Desktop\PublisherApp\PublisherDomain\obj\Debug\net8.0\refint\PublisherDomain.dll
 C:\Users\mahmoud.farahat\Desktop\PublisherApp\PublisherDomain\obj\Debug\net8.0\PublisherDomain.pdb
 C:\Users\mahmoud.farahat\Desktop\PublisherApp\PublisherDomain\obj\Debug\net8.0\ref\PublisherDomain.dll
+<<<<<<< HEAD
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\bin\Debug\net8.0\PublisherDomain.deps.json
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\bin\Debug\net8.0\PublisherDomain.dll
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\bin\Debug\net8.0\PublisherDomain.pdb
@@ -21,3 +22,6 @@ C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\obj\Debug\net8.0\Publi
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\obj\Debug\net8.0\refint\PublisherDomain.dll
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\obj\Debug\net8.0\PublisherDomain.pdb
 C:\Users\Mahmoud\Desktop\Publishers-Books\PublisherDomain\obj\Debug\net8.0\ref\PublisherDomain.dll
+=======
+C:\Users\mahmoud.farahat\Desktop\PublisherApp\PublisherDomain\obj\Debug\net8.0\PublisherDomain.sourcelink.json
+>>>>>>> 959505851451fb690ac2d52860bed39dc179642d

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mZ0eIumzz24qOrXfRY+Hog+eXir8f8D3iUAsMY/6ImDUmVd4dPBDC3qLaf8cJ6YQFRDuPpRDtsjIzW3QvuFrww==",
+  "dgSpecHash": "2+n2Z4992wMskkvXD+32mzsSw7cBP0sGsI7FytIVGtgj+fex/JKO+HFZz+UO16d7OVcvlYqeVuIf10vaqCEQyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mahmoud\\Desktop\\Publishers-Books\\PublisherConsole\\PublisherConsole.csproj",
   "expectedPackageFiles": [
@@ -81,5 +81,12 @@
     "C:\\Users\\Mahmoud\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Mahmoud\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Mahmoud\\Desktop\\Publishers-Books\\PublisherConsole\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
