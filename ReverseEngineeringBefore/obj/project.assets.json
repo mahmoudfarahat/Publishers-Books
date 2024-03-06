@@ -4081,23 +4081,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\": {},
+    "C:\\Users\\Mahmoud\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mahmoud.farahat\\Desktop\\PublisherApp\\ReverseEngineeringBefore\\ReverseEngineeringBefore.csproj",
+      "projectUniqueName": "C:\\Users\\Mahmoud\\Desktop\\Publishers-Books\\ReverseEngineeringBefore\\ReverseEngineeringBefore.csproj",
       "projectName": "ReverseEngineeringBefore",
-      "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\PublisherApp\\ReverseEngineeringBefore\\ReverseEngineeringBefore.csproj",
-      "packagesPath": "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mahmoud.farahat\\Desktop\\PublisherApp\\ReverseEngineeringBefore\\obj\\",
+      "projectPath": "C:\\Users\\Mahmoud\\Desktop\\Publishers-Books\\ReverseEngineeringBefore\\ReverseEngineeringBefore.csproj",
+      "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mahmoud\\Desktop\\Publishers-Books\\ReverseEngineeringBefore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mahmoud.farahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4105,7 +4108,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "E:\\Stimulsoft Reports 2023.1.1\\Crack\\Libs\\Reports.NetCore": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

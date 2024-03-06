@@ -9,7 +9,20 @@ namespace PublisherConsole
         static void Main(string[] args)
         {
 
-            ApplicationDbContext context = new ApplicationDbContext();
+
+
+
+            ApplicationDbContext context = new ();
+
+            var artistA = context.Artists.Find(1);
+            var cover = new Cover { DesignIdeas = "sdsads" };
+            cover.Artists.Add(artistA);
+            context.ChangeTracker.DetectChanges();
+            context.Covers.Add(cover);
+            context.SaveChanges();
+
+
+
             //context.Authors.ToList();
             //var author = context.Authors.Find(1);
 
