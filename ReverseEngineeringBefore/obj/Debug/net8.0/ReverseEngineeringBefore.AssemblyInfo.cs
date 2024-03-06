@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReverseEngineeringBefore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f1dc1279478fb6e80d949aa4311a042f3df923b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26d4e13f784af8077f3a0764ddb46b6cd92f2789")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReverseEngineeringBefore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReverseEngineeringBefore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,13 +8,13 @@ namespace PublisherDomain
 {
     public class Book
     {
-        public int BookId { get; set; }
-        public string Title { get; set; }
-        public DateOnly PublishDate { get; set; }
-        public decimal BasePrice { get; set; }
+        public virtual int BookId { get; set; }
+        public virtual string Title { get; set; }
+        public virtual DateOnly PublishDate { get; set; }
+        public virtual decimal BasePrice { get; set; }
 
-        public Author Author { get; set; }
-         public int AuthorId { get; set; }
+        public virtual Author Author { get; set; }
+         public virtual  int AuthorId { get; set; }
 
          //public int AuthorFK { get; set; }
 

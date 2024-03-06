@@ -6,7 +6,7 @@ namespace PublisherData
 {
     public class ApplicationDbContext :DbContext
     {
-        private StreamWriter _streamWriter = new StreamWriter("EFCoreLog.txt",append:true);
+        //private StreamWriter _streamWriter = new StreamWriter("EFCoreLogs.txt",append:true);
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
 
@@ -15,9 +15,9 @@ namespace PublisherData
             //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(
                 "Data Source=(localdb)\\ProjectModels;Initial Catalog=PublisherApp;TrustServerCertificate=true;ApplicationIntent=ReadWrite;"
-                )
-                //.LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name} ,LogLevel.Information)
-                .LogTo(_streamWriter.WriteLine)
+                ).UseLazyLoadingProxies()
+                 .LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name} ,LogLevel.Information)
+                //.LogTo(_streamWriter.WriteLine)
                 .EnableSensitiveDataLogging();
         }
 
@@ -44,15 +44,14 @@ namespace PublisherData
             //    .HasForeignKey(a => a.AuthorFK)
             //    .HasForeignKey('AuthorFK')
             //    .IsRequired(false);
-
-
+ 
             modelBuilder.Entity<Author>().HasData(authorList);
 
         }
 
         public override void Dispose()
         {
-            _streamWriter.Dispose();
+            //_streamWriter.Dispose();
             base.Dispose();
         }
     }

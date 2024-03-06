@@ -8,10 +8,28 @@ namespace PublisherConsole
     {
         static void Main(string[] args)
         {
-           ApplicationDbContext context = new ApplicationDbContext();
 
-            context.Authors.ToList();
+            ApplicationDbContext context = new ApplicationDbContext();
+            //context.Authors.ToList();
+            //var author = context.Authors.Find(1);
+
+            //var unKnownTypes = context.Authors.Select(a => new
+            //{
+            //    a.Id,
+            //    Name = a.FirstName.First() + " " + a.LastName,
+            //      a.Books 
+            //}).ToList();
+            //foreach (var item in author.Books)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+            var author = context.Authors.Find(1);
+
+            var books = author.Books.Count();
             
+            Console.WriteLine(books);   
+            var debugview = context.ChangeTracker.DebugView.ShortView;
+                
 
             //CoordinateRetrieveAndUpdateAuthor();
             //void CoordinateRetrieveAndUpdateAuthor()
