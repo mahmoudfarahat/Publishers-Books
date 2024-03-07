@@ -152,6 +152,9 @@ namespace PublisherData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoverId"));
 
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DesignIdeas")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -161,24 +164,30 @@ namespace PublisherData.Migrations
 
                     b.HasKey("CoverId");
 
+                    b.HasIndex("BookId")
+                        .IsUnique();
+
                     b.ToTable("Covers");
 
                     b.HasData(
                         new
                         {
                             CoverId = 1,
+                            BookId = 3,
                             DesignIdeas = "Pablo",
                             DigitalOnly = false
                         },
                         new
                         {
                             CoverId = 2,
+                            BookId = 2,
                             DesignIdeas = "Pablo",
                             DigitalOnly = false
                         },
                         new
                         {
                             CoverId = 3,
+                            BookId = 1,
                             DesignIdeas = "Pablo",
                             DigitalOnly = false
                         });
@@ -217,6 +226,17 @@ namespace PublisherData.Migrations
                     b.Navigation("Author");
                 });
 
+            modelBuilder.Entity("PublisherDomain.Cover", b =>
+                {
+                    b.HasOne("PublisherDomain.Book", "Book")
+                        .WithOne("Cover")
+                        .HasForeignKey("PublisherDomain.Cover", "BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+                });
+
             modelBuilder.Entity("PublisherDomain.CoverAssignment", b =>
                 {
                     b.HasOne("PublisherDomain.Artist", null)
@@ -235,6 +255,12 @@ namespace PublisherData.Migrations
             modelBuilder.Entity("PublisherDomain.Author", b =>
                 {
                     b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("PublisherDomain.Book", b =>
+                {
+                    b.Navigation("Cover")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

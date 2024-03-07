@@ -16,5 +16,8 @@ namespace PublisherDomain
 
         public List<Artist> Artists { get; set; } = new();
 
+        public Book Book { get; set; }
+        public int BookId { get; set; }
+
     }
 }

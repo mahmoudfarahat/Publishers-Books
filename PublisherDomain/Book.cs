@@ -16,6 +16,7 @@ namespace PublisherDomain
         public virtual Author Author { get; set; }
          public virtual  int AuthorId { get; set; }
 
+        public Cover Cover { get; set; }
          //public int AuthorFK { get; set; }
 
 

@@ -63,9 +63,9 @@ namespace PublisherData
 
             var someCovers = new Cover[]
             {
-                new Cover{CoverId = 1 , DesignIdeas = "Pablo" , DigitalOnly=false},
-                new Cover{CoverId = 2 , DesignIdeas = "Pablo" , DigitalOnly=false},
-                new Cover{CoverId =3 , DesignIdeas = "Pablo" , DigitalOnly=false},
+                new Cover{BookId =3, CoverId = 1 , DesignIdeas = "Pablo" , DigitalOnly=false},
+                new Cover{BookId =2,CoverId = 2 , DesignIdeas = "Pablo" , DigitalOnly=false},
+                new Cover{BookId =1,CoverId =3 , DesignIdeas = "Pablo" , DigitalOnly=false},
 
             };
             modelBuilder.Entity<Cover>().HasData(someCovers);
