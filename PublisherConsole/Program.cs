@@ -4,6 +4,12 @@ using PublisherDomain;
 
 namespace PublisherConsole
 {
+    record AuthorName
+    {
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -14,12 +20,31 @@ namespace PublisherConsole
 
             ApplicationDbContext context = new ();
 
-            var artistA = context.Artists.Find(1);
-            var cover = new Cover { DesignIdeas = "sdsads" };
-            cover.Artists.Add(artistA);
+
+
+            var authors = context.Database.SqlQuery<AuthorName>($"GetAuthorNames").ToList();
+
+            var longtitles = context.Database.SqlQuery<string>($"SELECT Title FROM BOOKS WHERE LEN(title)>{10}").ToList();
+
+            //var book = context.Books.Find(4);
+            //book.Cover = new Cover { DesignIdeas = "this is good" };
+            //var debugView = context.ChangeTracker.DebugView.ShortView;
+            //context.SaveChanges();
+
+            var book = context.Books.Include(b => b.Cover).FirstOrDefault(b => b.BookId == 4);
+            book.Cover = new Cover { DesignIdeas = "this is good ssssss" };
             context.ChangeTracker.DetectChanges();
-            context.Covers.Add(cover);
+            var debugView = context.ChangeTracker.DebugView.ShortView;
             context.SaveChanges();
+
+
+
+            //var artistA = context.Artists.Find(1);
+            //var cover = new Cover { DesignIdeas = "sdsads" };
+            //cover.Artists.Add(artistA);
+            //context.ChangeTracker.DetectChanges();
+            //context.Covers.Add(cover);
+            //context.SaveChanges();
 
 
 
@@ -36,13 +61,13 @@ namespace PublisherConsole
             //{
             //    Console.WriteLine(item.Title);
             //}
-            var author = context.Authors.Find(1);
+            //var author = context.Authors.Find(1);
 
-            var books = author.Books.Count();
-            
-            Console.WriteLine(books);   
-            var debugview = context.ChangeTracker.DebugView.ShortView;
-                
+            //var books = author.Books.Count();
+
+            //Console.WriteLine(books);   
+            //var debugview = context.ChangeTracker.DebugView.ShortView;
+
 
             //CoordinateRetrieveAndUpdateAuthor();
             //void CoordinateRetrieveAndUpdateAuthor()
@@ -156,29 +181,29 @@ namespace PublisherConsole
             //void GetAuthors()
             //{
 
-                //var authors =_context.Authors.Where( a => EF.Functions.Like(a.LastName,"O%")).ToList();  // T SQL sytax
+            //var authors =_context.Authors.Where( a => EF.Functions.Like(a.LastName,"O%")).ToList();  // T SQL sytax
 
-                //var filter = "O%";
-                //var authors1 = _context.Authors.Where(a => EF.Functions.Like(a.LastName,filter)).ToList();  // T SQL sytax
-
-
-                //var authors = _context.Authors.Where(a => a.FirstName == "O33li").ToList();
-
-                //var firstName = "O33li";
-                //var authors2 = _context.Authors.Where(a => a.FirstName == firstName).ToList();
+            //var filter = "O%";
+            //var authors1 = _context.Authors.Where(a => EF.Functions.Like(a.LastName,filter)).ToList();  // T SQL sytax
 
 
+            //var authors = _context.Authors.Where(a => a.FirstName == "O33li").ToList();
+
+            //var firstName = "O33li";
+            //var authors2 = _context.Authors.Where(a => a.FirstName == firstName).ToList();
 
 
-                //var authors = _context.Authors.Include(a => a.Books).ToList();
-                //foreach (var author in authors)
-                //{
-                //    Console.WriteLine(author.FirstName + " " + author.LastName);
-                //    foreach (var book in author.Books)
-                //    {
-                //        Console.WriteLine(book.Title);
-                //    }
-                //}
+
+
+            //var authors = _context.Authors.Include(a => a.Books).ToList();
+            //foreach (var author in authors)
+            //{
+            //    Console.WriteLine(author.FirstName + " " + author.LastName);
+            //    foreach (var book in author.Books)
+            //    {
+            //        Console.WriteLine(book.Title);
+            //    }
+            //}
             //}
 
 
